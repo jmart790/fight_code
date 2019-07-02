@@ -1,0 +1,220 @@
+{ 
+    "questions" : [
+        [
+            [
+                "What HTML element would you choose for the largest heading?",
+                "<h6>", "<head>", "<h1>", "<heading>", "<h1>"],
+            [
+                "What HTML element is used for inserting a line break?",
+                "<br>", "<lb>", "<break>", "<newline>", "<br>"], 
+            [
+                "What is the correct HTML for creating a hyperlink?",
+                "<a href=\"www.wyncode.co\">Wyncode</a>",
+                "<a>www.wyncode.co</a>",
+                "<a name=\"www.wyncode.co\">Wyncode</a>",
+                "<a url=\"www.wyncode.co\">Wyncode</a>",
+                "<a href=\"www.wyncode.co\">Wyncode</a>"], 
+            [
+                "How can you open a link in a new tab/browser window?",
+                "<a href=\"www.wyncode.co\" target=\"new\">",
+                "<a href=\"www.wyncode.co\" new>",
+                "<a href=\"www.wyncode.co\" target=\"_blank\">",
+                "<a href=\"www.wyncode.co\" target=\"tab\">",
+                "<a href=\"www.wyncode.co\" target=\"_blank\">"], 
+            [
+                "How can you make a numbered list?",
+                "<ol>", "<ul>", "<dl>", "<list>", "<ol>"],
+            [
+                "What is the correct HTML for making a checkbox?",
+                "<check>",
+                "<checkbox>",
+                "<input type=\"checkbox\">",
+                "<input type=\"check\">",
+                "<input type=\"checkbox\">"],
+            [
+                "What is the correct HTML for making a text input field?",
+                "<input type=\"text\">",
+                "<input type=\"textfield\">",
+                "<textinput type=\"text\">",
+                "<text>",
+                "<input type=\"text\">"]   
+        ],
+        [
+            [
+                "What is the correct HTML for referring to an external style sheet?",
+                "<style src=\"mystyle.css\">",
+                "<link rel=\"stylesheet\" type=\"text/css\" href=\"mystyle.css\">",
+                "<stylesheet>mystyle.css</stylesheet>",
+                "<style>mystyle.css</style>",
+                "<link rel=\"stylesheet\" type=\"text/css\" href=\"mystyle.css\">"], 
+            [
+                "Where in an HTML document is the correct place to refer to an external style sheet?",
+                "At the end of the document",
+                "In the <head> section",
+                "In the <body> section",
+                "in the <footer> section",
+                "In the <head> section"], 
+            
+            [
+                "Which HTML tag is used to define an internal style sheet?",
+                "<css>",
+                "<script>",
+                "<style>",
+                "<stylesheet>",
+                "<style>"], 
+            
+            [
+                "Which HTML attribute is used to define inline styles?",
+                "styles",
+                "class",
+                "style",
+                "font",
+                "style"], 
+            
+            [
+                "Which is the correct CSS syntax?",
+                "body { color: black; }",
+                "{ body; color: black; }",
+                "{ body: color = clack; }",
+                "body: color = black;",
+                "body { color: black; }"], 
+            
+            [
+                "How do you insert a comment in a CSS file?",
+                "// this is a comment",
+                "// this is a comment",
+                "' this is a comment",
+                "/* this is a comment */",
+                "/* this is a comment */"], 
+            [
+                "Which property is used to change the background color?",
+                "color",
+                "bgcolor",
+                "background-color",
+                "background",
+                "background-color"
+            ]
+        ],
+        [
+            [
+                "Inside which HTML element do we put the JavaScript?",
+                "<js>",
+                "<javascript>",
+                "<script>",
+                "<scripting>",
+                "<script>"], 
+            [
+                "What is the correct JavaScript syntax to change the content of the HTML element below?\n<p id=\"demo\">This is a demonstration.</p>",
+                "document.getElement(\"p\").innerHTML = \"Hello World!\";",
+                "#demo.innerHTML = \"Hello World!\";",
+                "document.getElementByName(\"p\").innerHTML = \"Hello World!\";",
+                "document.getElementById(\"demo\").innerHTML = \"Hello World!\";",
+                "document.getElementById(\"demo\").innerHTML = \"Hello World!\";"], 
+            [
+                "Where is the correct place to insert a JavaScript?",
+                "Both the <head> section and the <body> section are correct",
+                "The <head> section",
+                "The <body> section",
+                "In a <div>",
+                "Both the <head> section and the <body> section are correct"], 
+            [
+                "What is the correct syntax for referring to an external script called \"javascript_stuff.js\"?",
+                "<script href=\"javascript_stuff.js\">",
+                "<script name=\"javascript_stuff.js\">",
+                "<script src=\"javascript_stuff.js\">",
+                "<link src=\"javascript_stuff.js\">",
+                "<script src=\"javascript_stuff.js\">"], 
+            [
+                "How do you create a function in JavaScript?",
+                "function = myFunction()",
+                "function myFunction()",
+                "function:myFunction()",
+                "function = myFunction",
+                "function myFunction()"], 
+            [
+                "How do you call a function named \"myFunction\"?",
+                "call function myFunction()",
+                "call myFunction()",
+                "myFunction()",
+                "myFunction",
+                "myFunction()"], 
+            [
+                "How to write an IF statement in JavaScript?",
+                "if i = 5",
+                "if i = 5 then",
+                "if i == 5 then",
+                "if (i == 5)",
+                "if (i == 5)"]
+               
+        ],
+        [
+            [
+                "How does a WHILE loop start?",
+                "while i = 1 to 10",
+                "while (i <= 10)",
+                "while (i <= 10; i++)",
+                "while (i; i++)",
+                "while (i <= 10; i++)"], 
+            [
+                "How does a FOR loop start?",
+                "for (i = 0; i <= 5; i++)",
+                "for (i <= 5; i++)",
+                "for (i = 0; i <= 5)",
+                "for i = 1 to 5",
+                "for (i = 0; i <= 5; i++)"
+            ],
+            [
+                "How to write an IF statement for executing some code if \"i\" is NOT equal to 5?",
+                "if i =! 5 then",
+                "if i <> 5",
+                "if (i != 5)",
+                "if (i <> 5)",
+                "if (i != 5)"],
+            [
+                "What is the correct HTML for making a drop-down list?",
+                "<list>",
+                "<input type=\"list\">",
+                "<input type=\"dropdown\">",
+                "<select>",
+                "<select>"],
+            [
+                "What is the correct HTML for making a text area?",
+                "<textarea>",
+                "<input type=\"textarea\">",
+                "<input type=\"textbox\">",
+                "<input type=\"text\">",
+                "<input type=\"textarea\">"],
+            [
+                "What is the correct HTML for inserting an image?",
+                "<img alt=\"MyImage\">image.gif</img>",
+                "<image src=\"image.gif\" alt=\"MyImage\">",
+                "<img src=\"image.gif\" alt=\"MyImage\">",
+                "<img href=\"image.gif\" alt=\"MyImage\">",
+                "<img src=\"image.gif\" alt=\"MyImage\">"], 
+            [
+                "How do you add color to all <h1> elements?",
+                "all.h1 { color: blue; }",
+                "h1 { color: blue; }",
+                "h1.all { color: blue;}",
+                "every.h1 { color: blue; }",
+                "h1 { color: blue; }"], 
+            [
+                "Which CSS property controls the text size?",
+                "font-size",
+                "text-size",
+                "font-style",
+                "text-style",
+                "font-size"], 
+            [
+                "What is the correct CSS syntax for making all the <p> elements bold?",
+                "<p style=\"text-size: BeforeUnloadEvent;\">",
+                "p { text=size: bold; }",
+                "p {font-weight: bold; }",
+                "<p style=\"font-size: bold;\">",
+                "p {font-weight: bold; }"
+            ]           
+        ]
+
+    ]
+
+}
