@@ -13,7 +13,7 @@ let currentVillain
 let displayHeroHealth = (num) => "❤️  ".repeat(num)                 // print hearts to display health
 let displayVillainHealth = (num) => "💔  ".repeat(num)                 // print hearts to display health
 let printHealth = () => console.log(`\n${currentVillain}'s health:\n`+ 
-    `${displayVillainHealth(villainHealth)}\n${userName}'s health:\n`+ 
+    `${displayVillainHealth(villainHealth)}\n${userName}'s health:\n`+ sta 
     `${displayHeroHealth(heroHealth)}`
 )
 // questionQuery assigns a random question depending on what the current round is
