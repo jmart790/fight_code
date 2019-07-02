@@ -1,29 +1,48 @@
-const readlineSync = require('readline-sync')
+const readlineSync = require('readline-sync')                   // variable to call and receive user input
 let questionDataBase = require('./question_database.json')      // importing question database from json file
 let heroHealth = 5
 let villainHealth = 3
-let currentQuestion         // declaring the current question
-let option                  // declaring the user option
+let currentQuestion                                             // declaring the current question
+let option                                                      // declaring the user option
 let currentRound
 const villain = ["Evil Izzy 🦹🏻‍♂️", "Evil Don 🧟‍♂️", "Evil Bria 🧟‍♀️", "Evil Andy 🧛🏻‍♂️"]
-const userAttacks = ["throat punch 👊🏽", "round house 🦶🏽", "hadouken 🐉", "uppercut ✊🏽", "pile driver 💪🏽", "people's elbow 💪🏽", "stone cold stunner 💥", "foot stomp 🦶🏽", "spinning bird kick 🤸🏽‍♀️", "sonic boom ⚡️", "dragon punch 🐲🤜🏽"]
+const userAttacks = ["throat punch 👊🏽", "round house 🦶🏽", "hadouken 🐉", "uppercut ✊🏽", 
+    "pile driver 💪🏽", "people's elbow 💪🏽", "stone cold stunner 💥", "foot stomp 🦶🏽", 
+    "spinning bird kick 🤸🏽‍♀️", "sonic boom ⚡️", "dragon punch 🐲🤜🏽"]
 let currentVillain
-let displayHealth = (num) => "❤️  ".repeat(num)  // print hearts to display health
-let questionQuery = () =>  currentQuestion = questionDataBase.questions[currentRound-1][Math.floor(Math.random() * questionDataBase.questions[currentRound-1].length)] 
+let displayHeroHealth = (num) => "❤️  ".repeat(num)                 // print hearts to display health
+let displayVillainHealth = (num) => "💔  ".repeat(num)                 // print hearts to display health
+let printHealth = () => console.log(`\n${currentVillain}'s health:\n`+ 
+    `${displayVillainHealth(villainHealth)}\n${userName}'s health:\n`+ 
+    `${displayHeroHealth(heroHealth)}`
+)
+// questionQuery assigns a random question depending on what the current round is
+let questionQuery = () =>  currentQuestion = (
+    questionDataBase.questions[currentRound-1]
+    [Math.floor(Math.random() * questionDataBase.questions[currentRound-1].length)] 
+)
+// questionFormat formats the current question 
 let questionFormat = (currentQuestion) => {
-    return `${currentQuestion[0]}\n----------------------------------------------------------------------------------------\n(1) ${currentQuestion[1]}\n(2) ${currentQuestion[2]}\n(3) ${currentQuestion[3]}\n(4) ${currentQuestion[4]}\nAnswer: `
+    return `${currentQuestion[0]}\n----------------------------------------------------------------------------------------\n` +
+    `(1) ${currentQuestion[1]}\n(2) ${currentQuestion[2]}\n(3) ${currentQuestion[3]}\n(4) ${currentQuestion[4]}\nAnswer: `
 }
+// userGuess takes in the current question and the users guess and handles the appropriate repercussions
 let userGuess = (option, currentQuestion) => {
+    // if the user guessed correct
     if (currentQuestion[option] === currentQuestion[5]) {
         // calls random attack to the current villain
-        console.log(`\n${userName} dodged ${currentVillain}'s attack and landed a sweet ${userAttacks[Math.floor(Math.random() * userAttacks.length)]}!`)
+        console.log(`\n${userName} dodged ${currentVillain}'s attack and landed a sweet`+ 
+            `${userAttacks[Math.floor(Math.random() * userAttacks.length)]}!`)
         villainHealth--
         // removes the current question from the database
-        questionDataBase.questions[currentRound-1].splice(questionDataBase.questions[currentRound-1].indexOf(currentQuestion), 1) 
-        // prints hero and villain health status
-        console.log(`\n${currentVillain}'s health: ${displayHealth(villainHealth)}\n${userName}'s health: ${displayHealth(heroHealth)}`)
+        questionDataBase.questions[currentRound-1]
+        .splice(questionDataBase.questions[currentRound-1]
+        .indexOf(currentQuestion), 1) 
+        printHealth()       // prints hero and villain health status
         return true
-    } else {
+    }
+    // if the user guesses wrong 
+    else {    
         heroHealth--
         // if user health reaches 0, game over. If not keep playing.
         if (heroHealth === 0) {
@@ -37,12 +56,12 @@ let userGuess = (option, currentQuestion) => {
             process.exit()
         } else {
             console.log(`\nOh no! ${currentVillain} attacked ${userName} successfully. Try again.`)
-             // prints hero and villain health status
-            console.log(`\n${currentVillain}'s health: ${displayHealth(villainHealth)}\n${userName}'s health: ${displayHealth(heroHealth)}`)
+            printHealth()       // prints hero and villain health status
             return false
         }
     }
-}    
+}
+// roundCycle goes through the entire operation of each round    
 function roundCycle() {
     if (heroHealth > 0) {
         // while villain has health keep playing
@@ -67,8 +86,6 @@ console.log("  ___________.___  ________  ___ ______________  _________  _______
             "   \\___  /   |___|\\______  /\\___|_  / |____|      \\______  /\\_______  /_______  /_______  /\n"+
             "       \\/                \\/       \\/                     \\/         \\/        \\/        \\/ ")
 
-
-
 console.log( "------------------------------------------------------------------------------------------------" );
 console.log("Synopsis: \tWyncode has been taken over by an evil virus!")
 console.log("\t\tFight your way through three rounds of infected coders to reach freedom.")
@@ -76,8 +93,6 @@ console.log("\nRules: \t\tPick the correct answer to to defend yourself. \n\t\tY
 console.log( "------------------------------------------------------------------------------------------------\n" );
 currentRound = 1
 currentVillain = villain[0]
-
-
 
 console.log( "\t\t__________                         .___  ____\n"+ 
               "\t\t\\______   \\ ____  __ __  ____    __| _/ /_   |\n"+
@@ -120,7 +135,6 @@ villain.shift()         // removes the defeated villain from list
 currentVillain = villain[0]
 villainHealth = 3       // assigns new villain full health
 
-// CREATE FINAL ROUND
 console.log(`As ${userName} almost reaches the exit ${currentVillain} appears out of the deep dark web and attacks!`)
 console.log("\t___________.__              .__    __________                         .___ ._.\n"+
             "\t\\_   _____/|__| ____ _____  |  |   \\______   \\ ____  __ __  ____    __| _/ | |\n"+
@@ -130,7 +144,7 @@ console.log("\t___________.__              .__    __________                    
             "\t     \\/            \\/     \\/               \\/                  \\/      \\/   \\/")
 console.log( "----------------------------------------------------------------------------------------" );
 currentRound++
-// console.log(currentQuestion)
+
 roundCycle()
 console.log(`Congrats ${userName}! You defeated all the infected coders, saved Wyncode, & the world! `)
 console.log("\t ___________.__              ___________           .___ \n"+
